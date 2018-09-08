@@ -1,0 +1,99 @@
+.landing_flex{
+    position: relative;
+}
+
+.phones{
+    max-width: 830px;
+    min-width: 830px;
+    height: 85vh;
+    background: #ffffff;
+    position: absolute;
+    transform: translate(50%);
+    text-align: center;
+    top: 20px;
+    left: 26.2%;
+    margin-left: -300px;
+}
+
+.phones .phone{
+    padding-left: 200px;
+    height: 400px;
+}
+.phone2{
+    padding-left: 640px;
+    z-index: 2;
+    height: 440px;
+}
+.phone3{
+    padding-left: 1060px;
+    height: 400px;
+}
+
+.phones_h1{
+    padding-top: 45px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 22px;
+}
+.phones_h2{
+    text-align: center;
+    line-height: 25px;
+    padding-left: 70px;
+    padding-right: 70px;
+    font-weight: 400;
+    font-size: 14px;
+
+}
+
+
+.loginForm{
+    margin-left: -70px;
+    top: -50px;
+    left: 25%;
+    position: absolute;
+    margin-top: 9vh;
+    height: 200px;
+    width: 190px;
+    margin-right: 10px;
+    text-align: center;
+    font-size: 13px;
+    color: #324343;
+    font-weight: 400;
+}
+.email_input{
+    height: 30px;
+    width: 140px;
+    margin: 5px 20px 10px;
+    border: 1px solid #60606344;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.login_btn{
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: none;
+    background: #4a76a8;
+    color: #fff;
+    width: 150px;
+    height: 30px;
+    border-radius: 3px;
+    font-size: 13px;
+}
+.register_btn{
+    padding-left: 36px;
+    padding-right: 36px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: none;
+    background: #4a76a8;
+    border-radius: 3px;
+    font-size: 13px;
+}
+.register_btn a{
+    color: #fff;
+    text-decoration: none;
+}

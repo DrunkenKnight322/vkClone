@@ -1,0 +1,147 @@
+.header{
+    height: 43px;
+    background: #4a76a8;
+    position: relative;
+}
+img{
+    margin-left: -25px;
+    height: 53px;
+    margin-top: -5px;
+    position: absolute;
+    top: 60%;
+    left: 25%;
+    transform: translate(-60%, -50%);
+    text-align: center;
+}
+
+.search_inp{
+    position: absolute;
+    top: 60%;
+    left: 26.2%;
+    transform: translate(-50%, -65%);
+    text-align: center;
+    margin-left: 220px;
+}
+
+.input input{
+    width: 210px;
+    border-radius: 25px;
+    border: none;
+    height: 30px;
+    background: #224b7a;
+    color: #cfdbe9;
+    text-align: left;
+    padding-left: 10px;
+}
+.btnSwitch{
+    margin-left: 200px;
+    position: absolute;
+    left: 60%;
+    background: transparent;
+    border: none;
+    color: #fff;
+    height: 43px;
+    width: 120px;
+    font-size: 13px;
+    font-weight: bold;
+}
+.btnSwitch:hover{
+    background: rgb(61, 105, 155);
+}
+footer {
+    max-width: 830px;
+    min-width: 830px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 26.2%;
+    bottom: 0;
+    width: 100%;
+    background-color: #edeef0;
+    transform: translate(50%);
+    margin-left: -300px;
+    color: #4a76a8;
+    font-size: 13px
+}
+.footerDiv p{
+    margin-top: 15px;
+    margin-left: -650px;
+    text-align: center;
+}
+
+
+.a1{
+    color:#4a76a8;
+    text-decoration: none;
+    margin-top: 15px;
+    position: absolute;
+    left: 190px;
+    top: 0px
+   
+}
+.a2{
+    color:#4a76a8;
+    text-decoration: none;
+    position: absolute;
+    left: 285px;
+    top: 15px
+}
+.a3{
+    color:#4a76a8;
+    text-decoration: none;
+    position: absolute;
+    left: 355px;
+    top: 15px
+}
+.a4{
+    color:#4a76a8;
+    text-decoration: none;
+    position: absolute;
+    left: 430px;
+    top: 15px
+}
+
+.footerLang{
+    position: absolute;
+    left: 570px;
+    top: 15px
+}
+.a5{
+    padding-left: 130px;
+    color:#4a76a8;
+    text-decoration: none;
+    position: absolute;
+    top: 70%;
+    transform: translate(-50%, -65%);
+    margin-left: 0px;
+}
+.a6{
+    padding-left: 130px;
+    color:#4a76a8;
+    text-decoration: none;
+    position: absolute;
+    top: 70%;
+
+    transform: translate(-50%, -65%);
+    margin-left: 55px;
+}
+.a7{
+    padding-left: 130px;
+    color:#4a76a8;
+    text-decoration: none;
+    position: absolute;
+    top: 70%;
+
+    transform: translate(-50%, -65%);
+    margin-left: 125px;
+}
+.a8{
+    padding-left: 130px;
+    color:#4a76a8;
+    text-decoration: none;
+    position: absolute;
+    top: 70%;
+    transform: translate(-50%, -65%);
+    margin-left: 195px;
+}
