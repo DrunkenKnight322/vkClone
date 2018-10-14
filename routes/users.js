@@ -4,9 +4,10 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const passport = require('passport')
 const keys = require('../config/keys')
-
+const fs = require('fs-extra')
 
 const User = require('../models/User')
+const Photo = require('../models/Photo')
 
 
 
@@ -48,7 +49,18 @@ router.post('/login', (req, res) => {
                 bcrypt.compare(req.body.password, user.password)
                       .then(isMatch => {
                           if (isMatch) {
-                              const payload ={id: user.id, name: user.name, lastname: user.lastname}
+                              const payload ={
+                                 name: user.name,
+                                 id: user.id,
+                                 lastname: user.lastname,
+                                 birth: user.birth,
+                                 status: user.status,
+                                 city: user.city,
+                                 familyStatus: user.familyStatus,
+                                 inspire: user.inspire,
+                                 languages: user.languages,
+                                 about: user.about
+                                }
 
                               jwt.sign(payload, keys.secretOrKey ,{expiresIn: 3600}, (err, token) =>{
                                   res.json({
@@ -94,8 +106,35 @@ router.post('/add_friend/',  passport.authenticate('jwt', {session: false}), (re
 })
 
 //Current User
-router.get('/current', passport.authenticate('jwt', {session: false}), (req, res)=> {
+router.get('/current',(req, res)=> {
     res.json(req.user)
 })
 
+router.delete('/gallery/:id', (req, res) => {
+    User.findOne({id:req.body.id})
+    .then(user => { 
+        //delete from the User model
+        const removeIndex = user.gallery.map(i => i._id.toString()).indexOf(req.params.id)
+        user.gallery.splice(removeIndex, 1)
+        user.save().then(us => res.json(us))
+
+        Photo.findById(req.params.id, (err, doc) => {
+            console.log(doc.filename)
+            // delete from the file system
+            fs.remove(`./public/${doc.filename}`)
+            .then(() => {
+            console.log('success!')
+            })
+            .catch(err => {
+            console.error(err)
+            })
+            //delete from the database
+            doc.remove().then(()=> res.json({succes: true}))                 
+    })
+
+
+}) 
+})
+
 module.exports = router;
+
