@@ -34,10 +34,6 @@ app.use('/api/feed', feed)
 app.post('/upload', (req, res, next) => {
     let imageFile = req.files.file;
   
-    imageFile.mv(`${__dirname}/public/${req.body.filename}.jpg`, function(err) {
-      if (err) {
-        return res.status(500).send(err);
-      }
   
       res.json({file: `public/${req.body.filename}.jpg`});
     });
