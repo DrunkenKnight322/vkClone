@@ -5,6 +5,7 @@ const passport = require('passport')
 const path = require('path');
 const cors = require('cors');
 const uuidv1 = require('uuid/v1')
+const fs = require('fs-extra')
 
 
 const Photo = require('../models/Photo')
@@ -13,7 +14,18 @@ const User = require('../models/User')
 router.get('/:id', (req, res) => {
   User.findOne({user: req.body.id})
       .then(user => {
-
+            const galleryId = user.gallery[user.gallery.length - 1]
+            
+            Photo.findById(galleryId._id)
+            .then(pic => {
+              
+              if(galleryId._id.toString() == pic._id.toString()){
+                const file = `./public/${pic.filename}`
+                res.send(file)
+              }else{
+                res.send('huy')
+              }
+            })
           })
       
 })
